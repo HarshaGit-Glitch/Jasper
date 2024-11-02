@@ -1,0 +1,39 @@
+apiVersion: v2
+name: jasperserver-pro
+description: JasperReportServer deployment in K8s
+type: application
+version: 1.0.0
+appVersion: "9.0.0"
+keywords:
+  - Analytics
+  - BI Tool
+  - Embeddable Reporting Server
+
+maintainers:
+  - name: Jaspersoft
+    email: js-support@tibco.com
+    url: https://www.jaspersoft.com/
+
+dependencies:
+  - name: kubernetes-ingress
+    version: 1.29.3
+    repository: "@haproxytech"
+    condition: ingress.enabled
+
+  - name: kube-prometheus-stack
+    version: 56.3.0
+    repository: "@prometheus-community"
+    condition: metrics.enabled
+
+  - name: elasticsearch
+    version: 19.17.2
+    repository: "https://charts.bitnami.com/bitnami"
+    condition: logging.enabled
+
+  - name: scalable-query-engine
+    version: "1.0.0"
+    repository: "file://../../scalableQueryEngine/helm"
+    condition: scalableQueryEngine.enabled
+    tags:
+      - adhoc
+      - data-api

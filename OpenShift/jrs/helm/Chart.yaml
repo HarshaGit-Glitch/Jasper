@@ -1,0 +1,24 @@
+apiVersion: v2
+name: jasperserver-pro
+description: JasperReportServer deployment in K8s
+type: application
+version: 1.0.0
+appVersion: "9.0.0"
+keywords:
+  - Analytics
+  - BI Tool
+  - Embeddable Reporting Server
+
+maintainers:
+  - name: Jaspersoft
+    email: js-eng-infra@tibco.com
+    url: https://www.jaspersoft.com/
+
+dependencies:
+  - name: scalable-query-engine
+    version: "1.0.0"
+    repository: "file://../../scalableQueryEngine/helm"
+    condition: scalableQueryEngine.enabled
+    tags:
+      - adhoc
+      - data-api

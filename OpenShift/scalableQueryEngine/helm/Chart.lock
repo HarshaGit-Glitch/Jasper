@@ -1,0 +1,21 @@
+dependencies:
+- name: kubernetes-ingress
+  repository: https://haproxytech.github.io/helm-charts
+  version: 1.15.4
+- name: kube-prometheus-stack
+  repository: https://prometheus-community.github.io/helm-charts
+  version: 16.0.1
+- name: elasticsearch
+  repository: https://helm.elastic.co
+  version: 7.12.0
+- name: kibana
+  repository: https://helm.elastic.co
+  version: 7.12.0
+- name: redis-cluster
+  repository: https://charts.bitnami.com/bitnami
+  version: 7.6.4
+- name: scalable-query-engine-scaling
+  repository: ""
+  version: 1.0.0
+digest: sha256:8dd4ce24539438f888c86ad3440e5b9caf6bc21a8aa71659e4b20002e172e623
+generated: "2022-12-21T14:05:04.4599604+05:30"
